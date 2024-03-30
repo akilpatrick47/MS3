@@ -1,0 +1,20 @@
+main_prof.cpp: In function â€˜int main()â€™:
+main_prof.cpp:60:48: error: use of deleted function â€˜seneca::WalkinPatient::WalkinPatient(seneca::WalkinPatient&&)â€™
+    WalkinPatient* p = new WalkinPatient[6]{ 24 };
+                                                ^
+main_prof.cpp:18:10: note: â€˜seneca::WalkinPatient::WalkinPatient(seneca::WalkinPatient&&)â€™ is implicitly deleted because the default definition would be ill-formed:
+    class WalkinPatient : public Patient {
+          ^
+main_prof.cpp:18:10: error: no matching function for call to â€˜seneca::Patient::Patient(seneca::Patient)â€™
+main_prof.cpp:18:10: note: candidates are:
+In file included from main_prof.cpp:15:0:
+Patient.h:12:3: note: seneca::Patient::Patient(seneca::Patient&)
+   Patient(Patient& RS);
+   ^
+Patient.h:12:3: note:   no known conversion for argument 1 from â€˜seneca::Patientâ€™ to â€˜seneca::Patient&â€™
+Patient.h:11:3: note: seneca::Patient::Patient(int)
+   Patient(int ticketNum);
+   ^
+main_prof.cpp:61:22: error: use of deleted function â€˜seneca::WalkinPatient::WalkinPatient(seneca::WalkinPatient&&)â€™
+    WalkinPatient W = 24;
+                      ^
